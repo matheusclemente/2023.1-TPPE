@@ -20,6 +20,10 @@ Quanto ao fluxo do sistema, é possível associar tal característica ao mau che
 
 ### Modularidade
 
+Projetos de código são dividos em diversos "módulos", ou "componentes", como classes, objetos, pacotes, dentre outros. Uma boa modularidade atenta-se à coesão e acoplamento do código. Coesão diz respeito a funcionalidades relacionadas entre si serem agrupadas em um mesmo módulo, enquanto acoplamento se refere à interdependência entre módulos diferentes. Um bom projeto deve apresentar forte coesão e baixo acoplamento.
+
+Classe grande, inveja de recursos, homem do meio e classe preguiçosa são apenas alguns exemplos de mau cheiros de código que afetam a modularidade de um projeto. De forma geral, oportunidades de refatoração que interajam intensamente com classes (módulos) e suas interações irão, consequentemente, impactar a coesão e acoplamento do código, melhorando assim a modularidade do projeto. Para os exemplos de mau cheiros citados, podemos aplicar refatorações como _extrair método/mover método_, _mover atributo_ ou _extrair classe_.
+
 ### Boas interfaces
 
 ### Extensibilidade
