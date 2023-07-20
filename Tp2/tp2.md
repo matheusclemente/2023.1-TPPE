@@ -24,10 +24,6 @@ Projetos de código são dividos em diversos "módulos", ou "componentes", como 
 
 Classe grande, inveja de recursos, homem do meio e classe preguiçosa são apenas alguns exemplos de mau cheiros de código que afetam a modularidade de um projeto. De forma geral, oportunidades de refatoração que interajam intensamente com classes (módulos) e suas interações irão, consequentemente, impactar a coesão e acoplamento do código, melhorando assim a modularidade do projeto. Para os exemplos de mau cheiros citados, podemos aplicar refatorações como _extrair método/mover método_, _mover atributo_ ou _extrair classe_.
 
-### Boas interfaces
-
-(...)
-
 ### Extensibilidade
 
 Um bom projeto possibilita que novas funções sejam acrescentadas facilmente em espaços apropriados. Um código com boa extensibilidade está preparado para essa expansão, mas sem resultar em um código exacerbadamente genérico, que tenta se preparar para toda e qualquer possibilidade de extensão, mesmo que não faça sentido no contexto do projeto. É necessário um equilíbrio entre o que é essencial agora, o que será necassário no futuro, e o que poderá vir a ser vital mais a frente.
@@ -43,6 +39,10 @@ Um bom código não deve se repetir. Dois pedaços de código semelhantes que di
 Como o próprio nome evidencia, código duplicado é um exemplo de mau cheiro de código que vai contra essa característica de bom projeto. A operação de refatoração indicada é _extrair método_, como dito, para unificar o código duplicado em uma única função.
 
 ### Portabilidade
+
+Uma característica que não se aplica a todo projeto, portabilidade diz respeito à independência do código em relação a hardware ou sistema operacional. Como dito, nem todo projeto necessita dessa independência, e gastar recursos nesse viés sem essa necessidade é desvantajoso. Caso seja importante, no entanto, deve ser apropriadamente integrado ao código, pois uma refatoração posterior pode resultar em um código irreparavelmente deselegante, complexo e, em geral, ruim.
+
+Nesse caso, é notável a importância em manter uma boa modularidade, evitando os mais diversos mau cheiros de código desde o início. A tentativa de implementar a portabilidade em um projeto avançado, por exemplo, pode levar a um código impossível de refatorar a um nível que elimine uma quantidade relevante de mau cheiros.
 
 ### Idiomático
 
