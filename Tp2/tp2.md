@@ -26,12 +26,32 @@ Classe grande, inveja de recursos, homem do meio e classe preguiçosa são apena
 
 ### Boas interfaces
 
+(...)
+
 ### Extensibilidade
 
+Um bom projeto possibilita que novas funções sejam acrescentadas facilmente em espaços apropriados. Um código com boa extensibilidade está preparado para essa expansão, mas sem resultar em um código exacerbadamente genérico, que tenta se preparar para toda e qualquer possibilidade de extensão, mesmo que não faça sentido no contexto do projeto. É necessário um equilíbrio entre o que é essencial agora, o que será necassário no futuro, e o que poderá vir a ser vital mais a frente.
+
+Maus cheiros que podem impactar essa característica de forma mais direta são aquelas ligadas a mudanças ao projeto, como mudanças divergentes, cirurgia com rifle e hierarquias de herança paralelas, que descrevem numerosas mudanças acarretadas por uma singular mudança. Nesses casos, é indicada a refatoração _mover método/mover campo_ ou _incorporar classe/extrair classe_.
+
+Generalidade especulativa é um mau cheiro no caminho oposto, em que o projetista se prepara em excesso para uma funcionalidade que talvez seja implementada no futuro. Manter esse "espaço" para expansão torna-se custoso para o projeto. As operações de refatoração indicadas para esse caso seriam _diminuir hierarquia_, _incorporar classe_ ou _remover parâmetro_, todas formas de "podar" essa generalidade excessiva.
+
 ### Ausência de duplicidades
+
+Um bom código não deve se repetir. Dois pedaços de código semelhantes que diferem em poucos detalhes devem ser capazes de serem reescritos na forma de uma única função com parâmetros apropriados. Tal abordagem garante um código simples e elegante, e de manutenção mais eficaz.
+
+Como o próprio nome evidencia, código duplicado é um exemplo de mau cheiro de código que vai contra essa característica de bom projeto. A operação de refatoração indicada é _extrair método_, como dito, para unificar o código duplicado em uma única função.
 
 ### Portabilidade
 
 ### Idiomático
 
+É importante que um projeto não se atente apenas às boas práticas gerais de projetos, mas também às práticas específicas da linguagem a ser utilizada. É importante saber como ela funciona, para que o código seja facilmente entendido e interpretado pelo programador, e também para que o mesmo possa fazer bom uso. Conhecer os recursos disponíveis, para melhor utilizar-los.
+
+O uso impróprio da linguagem pode levar a diversos mau cheiros de código, a depender do projeto, programador e linguagem. "Obsessão primitiva" por exemplo, visto que estruturas de dados primitivas podem diferir de uma linguagem para outra. Operações de refatoração para esse caso envolvem trocar estruturas, como _trocar dado por objeto_ ou _trocar tipo código por classe_.
+
 ### Boa documentação
+
+Como o título sugere, um bom projeto deve ser bem documentado. Isso inclui documentos de arquitetura, comentários, documentação de API e código alto-documentado.
+
+Nisso, destaca=se o mau cheiro de mal uso de comentários, que tende a ocorrer quando o código não apresenta classes e funções com nomes significativos, por exemplo. Em muitos casos, comentários acabam atuando como uma ferramenta para "mascarar" outros mau cheiros de código, sendo necessário portanto a refatoração sobre esses outros problemas. Quanto a comentários, especificamente, recomenda-se as operações de refatoração _extrair método_ e _renomear método_ para reduzir a necessidade de explicação do código.
